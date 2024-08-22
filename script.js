@@ -14,4 +14,36 @@ function getHumanChoice() {
     return choice;
 }
 
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+    computerChoice = computerChoice.toLowerCase();
+
+    let message = '';
+
+    switch (`${humanChoice}_${computerChoice}`) {
+        case 'rock_rock':
+        case 'paper_paper':
+        case 'scissors_scissors':
+            message = 'It\'s a tie';    
+            break;
+        case 'rock_scissors':
+        case 'paper_rock':
+        case 'scissors_paper':
+            message = `You win! ${humanChoice} beats ${computerChoice}`;
+            humanScore++;
+            break;
+        case 'scissors_rock':
+        case 'rock_paper':
+        case 'paper_scissors':
+            message = `You lose! ${computerChoice} beats ${humanChoice}`;
+            computerScore++;
+            break;
+        
+        default:
+            message = 'Error';
+    }
+
+    console.log(message);
+}
+
+playRound('scissors', 'paper');
