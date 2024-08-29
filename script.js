@@ -55,14 +55,32 @@ function playRound(humanChoice, computerChoice) {
     return message;
 }
 
-function whoWonMessage(winningMessage, scoreInfo) {
+function whoWonMessage(...winningMessages) {
     const whoWonScore = document.querySelector("#whoWonScore");
     whoWonScore.textContent = "";
-    whoWonScore.appendChild(winningMessage);
-    whoWonScore.appendChild(scoreInfo);
 
+    for (const winningMessage of winningMessages) {
+        whoWonScore.appendChild(winningMessage)
+    }
 }
 
+function winningInfo(roundWinnerMessage, scoreInfo) {
+    let gameWinner = document.createElement('p');
+
+    if (humanScore === 5 ) {
+        gameWinner.textContent = "YOU WON THE GAME";
+        whoWonMessage(gameWinner);
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5) {
+        gameWinner.textContent = "COMPUTER WON THE GAME";
+        whoWonMessage(gameWinner);
+        humanScore = 0;
+        computerScore = 0;
+    } else {
+        whoWonMessage(roundWinnerMessage, scoreInfo);
+    }
+}
 function playGame(optionButton) {
     let humanChoice = optionButton.dataset.option;
     let computerChoice = getComputerChoice();
@@ -72,14 +90,13 @@ function playGame(optionButton) {
     const scoreInfo = document.createElement('p');
     scoreInfo.textContent = `YOU: ${humanScore} COMPUTER: ${computerScore}`;
 
-    whoWonMessage(roundWinnerMessage, scoreInfo);
+    winningInfo(roundWinnerMessage, scoreInfo);
 }
 
 const optionButtons = document.querySelectorAll("button");
 
 optionButtons.forEach((optionButton) => {
     optionButton.addEventListener("click", function () {
-        playGame(this);
+        playGame(optionButton);
     });
-
 });
