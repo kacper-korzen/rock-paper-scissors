@@ -1,21 +1,28 @@
 :root {
-    --text: hsl(66, 100%, 6%);
-    --background: hsl(69, 100%, 96%);
-    --primary: hsl(67, 98%, 51%);
-    --secondary: hsl(133, 97%, 72%);
-    --accent: hsl(151, 98%, 63%);
+    --clr-text: hsl(66, 100%, 6%);
+    --clr--background: hsl(69, 100%, 96%);
+    --clr-primary: hsl(67, 98%, 51%);
+    --clr-secondary: hsl(133, 97%, 72%);
+    --clr-accent: hsl(151, 98%, 63%);
 
     --ff-base: 'Red Hat Mono', monospace;
     --ff-accent: 'Red Hat Mono Bold', monospace;
+
+    --fs-300: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --fs-400: clamp(1.35rem, 1.24rem + 0.55vw, 1.6663rem);
+    --fs-500: clamp(1.62rem, 1.4109rem + 1.0454vw, 2.2211rem);
+    --fs-600: clamp(1.944rem, 1.5904rem + 1.7682vw, 2.9607rem);
+    --fs-700: clamp(2.3328rem, 1.7715rem + 2.8067vw, 3.9467rem);
+    --fs-800: clamp(2.7994rem, 1.9432rem + 4.281vw, 5.2609rem);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text: hsl(66, 100%, 94%);
-        --background: hsl(69, 100%, 4%);
-        --primary: hsl(67, 98%, 49%);
-        --secondary: hsl(133, 97%, 28%);
-        --accent: hsl(151, 98%, 37%);
+        --clr-text: hsl(66, 100%, 94%);
+        --clr-background: hsl(69, 100%, 4%);
+        --clr-primary: hsl(67, 98%, 49%);
+        --clr-secondary: hsl(133, 97%, 28%);
+        --clr-accent: hsl(151, 98%, 37%);
         }
 }
 
@@ -43,10 +50,35 @@ video{
 
 body {
     font-family: var(--ff-base);
-    color:var(--text);
+    font-size: var(--fs-400);
+    line-height: 1.5;
+    color:var(--clr-text);
+}
+
+h1, h2, h3 {
+    font-family: var(--ff-accent);
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: var(--fs-700);
+}
+
+h2 {
+    font-size: var(--fs-600);
+}
+
+h3{
+    font-size: var(--fs-500);
 }
 
 .wrapper {
-    width: min(65ch, 100% - 3rem);
+    width: min(55ch, 100% - 3rem);
     margin-inline: auto;
+}
+
+.flow > * + * {
+    --flow-space: 1em;
+    margin-top: var(--flow-space, 1em);
 }
