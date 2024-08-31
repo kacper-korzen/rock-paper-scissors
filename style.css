@@ -40,3 +40,13 @@ video{
     max-width: 100%;
     display: block;
 }
+
+body {
+    font-family: var(--ff-base);
+    color:var(--text);
+}
+
+.wrapper {
+    width: min(65ch, 100% - 3rem);
+    margin-inline: auto;
+}
