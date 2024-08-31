@@ -1,6 +1,42 @@
+:root {
+    --text: hsl(66, 100%, 6%);
+    --background: hsl(69, 100%, 96%);
+    --primary: hsl(67, 98%, 51%);
+    --secondary: hsl(133, 97%, 72%);
+    --accent: hsl(151, 98%, 63%);
+
+    --ff-base: 'Red Hat Mono', monospace;
+    --ff-accent: 'Red Hat Mono Bold', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: hsl(66, 100%, 94%);
+        --background: hsl(69, 100%, 4%);
+        --primary: hsl(67, 98%, 49%);
+        --secondary: hsl(133, 97%, 28%);
+        --accent: hsl(151, 98%, 37%);
+        }
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 * {
     margin: 0;
-    padding: 0;
 }
 
+html{
+    color-scheme:light dark; ;
+}
+
+img,
+svg,
+video{
+    max-width: 100%;
+    display: block;
+}
