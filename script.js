@@ -6,12 +6,12 @@ function getComputerChoice() {
   return choices[randomChoice];
 }
 
-function getHumanChoice() {
-  const promptMessage = `Write one option(rock, paper, scissors):`;
-  let choice = prompt(promptMessage);
+// function getHumanChoice() {
+//   const promptMessage = `Write one option(rock, paper, scissors):`;
+//   let choice = prompt(promptMessage);
 
-  return choice;
-}
+//   return choice;
+// }
 
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -64,21 +64,40 @@ function whoWonMessage(...winningMessages) {
     }
 }
 
-function winningInfo(roundWinnerMessage, scoreInfo) {
-    let gameWinner = document.createElement('p');
+function toggleDisableButtons() {
+    optionButtons.forEach((optionButton) => {
+        optionButton.disabled = !optionButton.disabled;
+    });
+}
+
+function winningInfo(scoreInfo, roundWinnerMessage) {
+    const gameWinner = document.createElement('p');
+    const div = document.createElement('div');
+    const playAgainButton = document.createElement('button');
+    div.appendChild(playAgainButton);
+
+    playAgainButton.textContent = "PLAY AGAIN";
+    playAgainButton.addEventListener("click", function () {
+        window.location.reload();
+    });
+
 
     if (humanScore === 5 ) {
         gameWinner.textContent = "YOU WON THE GAME";
+        gameWinner.appendChild(div);
         whoWonMessage(gameWinner);
+        toggleDisableButtons();
         humanScore = 0;
         computerScore = 0;
     } else if (computerScore === 5) {
         gameWinner.textContent = "COMPUTER WON THE GAME";
+        gameWinner.appendChild(div);
         whoWonMessage(gameWinner);
+        toggleDisableButtons();
         humanScore = 0;
         computerScore = 0;
     } else {
-        whoWonMessage(roundWinnerMessage, scoreInfo);
+        whoWonMessage(scoreInfo, roundWinnerMessage);
     }
 }
 function playGame(optionButton) {
@@ -90,7 +109,7 @@ function playGame(optionButton) {
     const scoreInfo = document.createElement('p');
     scoreInfo.textContent = `YOU: ${humanScore} COMPUTER: ${computerScore}`;
 
-    winningInfo(roundWinnerMessage, scoreInfo);
+    winningInfo(scoreInfo, roundWinnerMessage);
 }
 
 const optionButtons = document.querySelectorAll("button");
