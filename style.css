@@ -5,6 +5,10 @@
     --clr-secondary: hsl(133, 97%, 72%);
     --clr-accent: hsl(151, 98%, 63%);
 
+    --clr-rock: hsl(244, 55%, 62%);
+    --clr-paper: hsl(162, 59%, 50%);
+    --clr-scissors: hsl(350, 67%, 59%);
+
     --ff-base: 'Red Hat Mono', monospace;
     --ff-accent: 'Red Hat Mono Bold', monospace;
 
@@ -25,7 +29,6 @@
         --clr-accent: hsl(151, 98%, 37%);
     }
 }
-
 
 *,
 *::before,
@@ -76,7 +79,7 @@ h3{
 .wrapper {
     width: min(65ch, 100% - 4rem);
     margin-inline: auto;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .flow > * + * {
@@ -84,27 +87,49 @@ h3{
     margin-top: var(--flow-space, 1em);
 }
 
-.grid-wrapper {
-    display: grid;    
-    grid-template-rows: 1fr 1fr auto;
-    grid-template-areas: 
-    "header"
-    "main"
-    "footer";
-    gap: 1rem;
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
+.text-center{
+    text-align: center;
+}
+
+.text-clr-rock{
+    color: var(--clr-rock);
+}
+.text-clr-paper {
+    color: var(--clr-paper);
+}
+
+.text-clr-scissors {
+    color: var(--clr-scissors);
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+p {
+    text-wrap: pretty;
+    font-size: var(--fs-300);
+}
 
 /* header */
 header{
-    grid-area: header;
+    
 }
 /* main */
 main {
     grid-area: main;
+    flex: 1;
+
 }
 
 /* footer */
 footer{
-    grid-area: footer;
+    text-align: center;
+    margin-top: auto;
 }
