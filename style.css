@@ -23,7 +23,7 @@
         --clr-primary: hsl(67, 98%, 49%);
         --clr-secondary: hsl(133, 97%, 28%);
         --clr-accent: hsl(151, 98%, 37%);
-        }
+    }
 }
 
 
@@ -38,7 +38,7 @@
 }
 
 html{
-    color-scheme:light dark; ;
+    color-scheme:light dark; 
 }
 
 img,
@@ -74,11 +74,37 @@ h3{
 }
 
 .wrapper {
-    width: min(55ch, 100% - 3rem);
+    width: min(65ch, 100% - 4rem);
     margin-inline: auto;
+    height: 100vh;
 }
 
 .flow > * + * {
     --flow-space: 1em;
     margin-top: var(--flow-space, 1em);
+}
+
+.grid-wrapper {
+    display: grid;    
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    gap: 1rem;
+}
+
+
+/* header */
+header{
+    grid-area: header;
+}
+/* main */
+main {
+    grid-area: main;
+}
+
+/* footer */
+footer{
+    grid-area: footer;
 }
