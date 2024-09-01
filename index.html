@@ -12,22 +12,35 @@
     
 </head>
 <body>
-    <div class="wrapper grid-wrapper">
-        <header>
-            <h1>Rock Paper Scissors Game</h1>
+    <div class="wrapper flex-wrapper flow">
+        <header class="text-center flow">
+            <h1 class="text-uppercase">
+                <span class="text-clr-rock">Rock</span> 
+                <span class="text-clr-paper">Paper</span> 
+                <span class="text-clr-scissors">Scissors</span> 
+            </h1>
+            <p>3 options | 5 chances | 1 winner</p>
+            <p>
+                <span class="text-clr-rock">Rock</span> beats <span class="text-clr-scissors">Scissors</span>  |
+                <span class="text-clr-scissors">Scissors</span> beats <span class="text-clr-paper">Paper</span> |
+                <span class="text-clr-paper">Paper</span> beats <span class="text-clr-rock">Rock</span> 
+            </p>
         </header>
         
-        <main>
-            <p>Pick your weapon</p>
+        <main class="text-center flow">
+
+            <p>Pick your weapon:</p>
             <p>First one to get 5 points wins the game</p>
 
-            <button data-option="rock">Rock</button>
-            <button data-option="paper">Paper</button>
-            <button data-option="scissors">Scissors</button>
+            <section class="options">
+                <button data-option="rock">Rock</button>
+                <button data-option="paper">Paper</button>
+                <button data-option="scissors">Scissors</button>
+            </section>
             <div id="whoWonScore"></div>
         </main>
 
-        <footer >Copyright &copy; 2024</footer>
+        <footer>Copyright &copy; 2024</footer>
     </div>
 </body>
 </html>
