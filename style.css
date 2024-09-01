@@ -136,7 +136,7 @@ header{
 
 
 /* buttons */
-button {
+.options button {
     border: 0;
     border-radius: 0.5rem;
     background-color: transparent;
@@ -146,7 +146,18 @@ button {
 }
 
 button:hover {
-    filter: saturate(1) brightness(1);
+    filter: saturate(2) brightness(1);
+}
+
+button {
+    background-color: var(--clr-accent);
+    padding: 0.5rem 1rem;
+    font-size: large;
+    color: var(--clr-text);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 /* main */
