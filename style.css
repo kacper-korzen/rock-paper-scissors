@@ -119,13 +119,39 @@ p {
 
 /* header */
 header{
-    
+    flex: 0;
 }
+
+/* options */
+.options{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    border: 3px solid gray;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+
+/* buttons */
+button {
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    filter: saturate(0) brightness(0.7);
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    filter: saturate(1) brightness(1);
+}
+
 /* main */
 main {
-    grid-area: main;
     flex: 1;
-
 }
 
 /* footer */
