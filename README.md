@@ -18,7 +18,7 @@ This project is a basic implementation of the classic Rock Paper Scissors game. 
 
 ## Demo
 
-[**Live Demo**](https://radix-ratio.github.io/rock-paper-scissors/) | [**Project Specs**](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors#assignment) 
+[**Live Demo**](https://kacper-korzen.github.io/rock-paper-scissors/) | [**Project Specs**](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors#assignment) 
 
 
 ## Screenshots
@@ -45,4 +45,4 @@ This project is licensed under the MIT License. See [`LICENSE`](https://chooseal
 
 ## Authors
 
-- [@radix-ratio](https://www.github.com/radix-ratio)
+- [@Kacper K](https://www.github.com/kacper-korzen)
